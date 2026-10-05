@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Taxi VI | Leerlingenvervoer, luchthaven- en evenementenvervoer</title>
+  <meta name="description" content="Taxi VI verzorgt leerlingenvervoer, luchthaventransfers, evenementenvervoer en zakelijke ritten op afspraak. Vaste prijs vooraf. Vraag een offerte aan of stuur een WhatsApp.">
+  <meta name="theme-color" content="#0e1214">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="topbar" id="topbar">
+    <div class="wrap topbar__inner">
+      <a href="#top" class="logo" aria-label="Taxi VI, naar boven">
+        <span class="logo__mark">VI</span>
+        <span class="logo__text">Taxi <b>VI</b></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Hoofdmenu">
+        <a href="#diensten">Diensten</a>
+        <a href="#werkwijze">Werkwijze</a>
+        <a href="#waarom">Waarom wij</a>
+        <a href="#vragen">Vragen</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="topbar__cta">
+        <a href="#" class="btn btn--ghost btn--sm js-wa" data-msg="Hoi Taxi VI, ik heb een vraag over vervoer.">
+          <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span>
+        </a>
+        <a href="#offerte" class="btn btn--gold btn--sm">Offerte aanvragen</a>
+        <button class="burger" id="burger" aria-label="Menu openen" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO + OFFERTE ============ -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="pill"><span class="pill__dot"></span>Vervoer op afspraak · vaste prijs vooraf</p>
+          <h1>Elke rit gepland,<br><span class="gold">elke keer op tijd</span></h1>
+          <p class="lead">Taxi VI rijdt <strong>leerlingen naar school</strong>, <strong>reizigers naar de luchthaven</strong> en <strong>gasten naar hun evenement</strong>. U spreekt vooraf een vaste prijs af en weet precies wie u komt halen.</p>
+          <div class="hero__actions">
+            <a href="#offerte" class="btn btn--gold">
+              <svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>Offerte aanvragen
+            </a>
+            <a href="#" class="btn btn--outline js-wa" data-msg="Hoi Taxi VI, ik wil graag een rit plannen.">
+              <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>App ons direct
+            </a>
+          </div>
+          <ul class="hero__checks">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Vaste prijs, ook bij file</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Chauffeurs met VOG</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Vluchtmonitoring</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>24/7 bereikbaar via WhatsApp</li>
+          </ul>
+        </div>
+
+        <!-- Offerteformulier in 2 stappen -->
+        <form id="offerte" class="quote" novalidate>
+          <div class="quote__head">
+            <h2 class="quote__title">Vraag een offerte aan</h2>
+            <span class="quote__count" id="stepcount">Stap 1 van 2</span>
+          </div>
+          <ol class="quote__steps" aria-hidden="true">
+            <li class="is-active" data-step-ind="1"><span>1</span>Uw rit</li>
+            <li data-step-ind="2"><span>2</span>Uw gegevens</li>
+          </ol>
+
+          <!-- STAP 1 -->
+          <div class="quote__panel" data-step="1">
+            <fieldset class="types">
+              <legend>Soort rit</legend>
+              <div class="types__grid">
+                <input type="radio" name="type" id="t-school" value="Leerlingenvervoer" checked>
+                <label for="t-school"><svg aria-hidden="true"><use href="#i-school"/></svg>Leerlingen</label>
+                <input type="radio" name="type" id="t-air" value="Luchthaven">
+                <label for="t-air"><svg aria-hidden="true"><use href="#i-plane"/></svg>Luchthaven</label>
+                <input type="radio" name="type" id="t-event" value="Evenement">
+                <label for="t-event"><svg aria-hidden="true"><use href="#i-star"/></svg>Evenement</label>
+                <input type="radio" name="type" id="t-biz" value="Zakelijk">
+                <label for="t-biz"><svg aria-hidden="true"><use href="#i-brief"/></svg>Zakelijk</label>
+                <input type="radio" name="type" id="t-group" value="Groep">
+                <label for="t-group"><svg aria-hidden="true"><use href="#i-group"/></svg>Groep</label>
+              </div>
+            </fieldset>
+
+            <div class="route">
+              <div class="route__rail" aria-hidden="true"><i></i><b></b><i></i></div>
+              <div class="route__fields">
+                <div class="field">
+                  <label for="van">Ophaaladres</label>
+                  <input id="van" name="van" type="text" placeholder="Straat, huisnummer, plaats" required autocomplete="street-address">
+                </div>
+                <div class="field">
+                  <label for="naar" id="naar-label">Naam en adres school</label>
+                  <input id="naar" name="naar" type="text" placeholder="bv. De Regenboog, Utrecht" required list="luchthavens">
+                  <datalist id="luchthavens">
+                    <option value="Schiphol Airport"></option>
+                    <option value="Eindhoven Airport"></option>
+                    <option value="Rotterdam The Hague Airport"></option>
+                    <option value="Düsseldorf Airport"></option>
+                    <option value="Brussels Airport"></option>
+                  </datalist>
+                </div>
+              </div>
+            </div>
+
+            <div class="row3">
+              <div class="field">
+                <label for="datum" id="datum-label">Startdatum</label>
+                <input id="datum" name="datum" type="date" required>
+              </div>
+              <div class="field">
+                <label for="tijd" id="tijd-label">Ophaaltijd</label>
+                <input id="tijd" name="tijd" type="time" required>
+              </div>
+              <div class="field">
+                <label for="personen">Personen</label>
+                <select id="personen" name="personen">
+                  <option>1</option><option>2</option><option>3</option><option>4</option>
+                  <option>5</option><option>6</option><option>7</option><option>8</option>
+                  <option>Meer dan 8</option>
+                </select>
+              </div>
+            </div>
+
+            <label class="toggle" for="retour">
+              <input type="checkbox" id="retour" name="retour">
+              <span class="toggle__ui" aria-hidden="true"></span>
+              <span>Retourrit erbij</span>
+            </label>
+
+            <button type="button" class="btn btn--gold btn--block" id="next">Volgende stap
+              <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+
+          <!-- STAP 2 -->
+          <div class="quote__panel" data-step="2" hidden>
+            <div class="extra" data-for="Leerlingenvervoer">
+              <div class="field">
+                <label for="frequentie">Hoe vaak?</label>
+                <select id="frequentie" name="frequentie">
+                  <option>Elke schooldag, heen en terug</option>
+                  <option>Elke schooldag, alleen heen</option>
+                  <option>Een paar dagen per week</option>
+                  <option>Eenmalig</option>
+                </select>
+              </div>
+            </div>
+            <div class="extra row2" data-for="Luchthaven" hidden>
+              <div class="field">
+                <label for="vlucht">Vluchtnummer <span class="opt">(optioneel)</span></label>
+                <input id="vlucht" name="vlucht" type="text" placeholder="bv. KL1234" autocomplete="off">
+              </div>
+              <div class="field">
+                <label for="koffers">Koffers</label>
+                <select id="koffers" name="koffers">
+                  <option>0 tot 1</option><option selected>2</option><option>3 tot 4</option><option>5 of meer</option>
+                </select>
+              </div>
+            </div>
+            <div class="extra" data-for="Evenement" hidden>
+              <div class="field">
+                <label for="evenement">Soort evenement</label>
+                <select id="evenement" name="evenement">
+                  <option>Bruiloft</option>
+                  <option>Feest of verjaardag</option>
+                  <option>Concert of festival</option>
+                  <option>Gala of bedrijfsfeest</option>
+                  <option>Uitvaart</option>
+                  <option>Anders</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row2">
+              <div class="field">
+                <label for="naam">Naam</label>
+                <input id="naam" name="naam" type="text" placeholder="Uw naam" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="email">E-mail <span class="opt">(optioneel)</span></label>
+                <input id="email" name="email" type="email" placeholder="naam@voorbeeld.nl" autocomplete="email">
+              </div>
+            </div>
+            <div class="field">
+              <label for="opmerking">Opmerking <span class="opt">(optioneel)</span></label>
+              <textarea id="opmerking" name="opmerking" rows="2" placeholder="bv. rolstoel, kinderzitje of extra stop"></textarea>
+            </div>
+
+            <div class="quote__btns">
+              <button type="button" class="btn btn--line" id="back">
+                <svg class="ico ico--flip" aria-hidden="true"><use href="#i-arrow"/></svg>Terug
+              </button>
+              <button type="submit" class="btn btn--gold">
+                <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Verstuur via WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <p class="quote__foot">Binnen 1 uur een vaste prijs. U zit nergens aan vast.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="ticker" aria-label="Onze diensten">
+      <div class="ticker__track">
+        <span>Leerlingenvervoer</span><span>Schiphol</span><span>Eindhoven Airport</span><span>Evenementen</span><span>Bruiloften</span><span>Zakelijk vervoer</span><span>Groepsvervoer</span><span>Rotterdam Airport</span><span>Düsseldorf</span>
+        <span aria-hidden="true">Leerlingenvervoer</span><span aria-hidden="true">Schiphol</span><span aria-hidden="true">Eindhoven Airport</span><span aria-hidden="true">Evenementen</span><span aria-hidden="true">Bruiloften</span><span aria-hidden="true">Zakelijk vervoer</span><span aria-hidden="true">Groepsvervoer</span><span aria-hidden="true">Rotterdam Airport</span><span aria-hidden="true">Düsseldorf</span>
+      </div>
+    </div>
+
+    <!-- ============ DIENSTEN ============ -->
+    <section id="diensten" class="section">
+      <div class="wrap">
+        <div class="head head--split">
+          <div>
+            <p class="eyebrow">Onze diensten</p>
+            <h2>Alles vooraf <span class="gold">geregeld</span></h2>
+          </div>
+          <p class="head__lead">Geen ritjes van straat. Wij plannen vooraf, zodat u, uw kind of uw gasten er niet meer naar om hoeven te kijken.</p>
+        </div>
+
+        <div class="cards" aria-label="Diensten, veeg voor meer">
+          <article class="card card--dark card--wide">
+            <div class="card__top">
+              <span class="card__icon"><svg aria-hidden="true"><use href="#i-school"/></svg></span>
+              <span class="tag">Meest gevraagd</span>
+            </div>
+            <h3>Leerlingenvervoer</h3>
+            <p>Elke schooldag van huis naar school en terug, voor regulier en speciaal onderwijs. Dezelfde chauffeur, dezelfde tijd en één vast aanspreekpunt voor ouders en school.</p>
+            <ul class="chips">
+              <li>Vaste chauffeur met VOG</li>
+              <li>Kinderzitjes</li>
+              <li>Overdracht aan school of ouder</li>
+              <li>Voor ouders, scholen en gemeenten</li>
+            </ul>
+            <a href="#offerte" class="card__link js-pick" data-type="t-school">Leerlingenvervoer aanvragen <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="card">
+            <span class="card__icon"><svg aria-hidden="true"><use href="#i-plane"/></svg></span>
+            <h3>Luchthavenvervoer</h3>
+            <p>Van de voordeur naar de vertrekhal en weer terug. Wij volgen uw vlucht, dus vertraging kost niets extra.</p>
+            <ul class="chips">
+              <li>Schiphol</li><li>Eindhoven</li><li>Rotterdam</li><li>Düsseldorf</li>
+            </ul>
+            <a href="#offerte" class="card__link js-pick" data-type="t-air">Transfer aanvragen <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="card">
+            <span class="card__icon"><svg aria-hidden="true"><use href="#i-star"/></svg></span>
+            <h3>Evenementenvervoer</h3>
+            <p>Bruiloften, feesten, concerten en gala's. Wij brengen u en uw gasten en halen iedereen veilig weer op.</p>
+            <ul class="chips">
+              <li>Bruiloften</li><li>Festivals</li><li>Gala's</li>
+            </ul>
+            <a href="#offerte" class="card__link js-pick" data-type="t-event">Evenement aanvragen <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="card">
+            <span class="card__icon"><svg aria-hidden="true"><use href="#i-brief"/></svg></span>
+            <h3>Zakelijk vervoer</h3>
+            <p>Voor medewerkers, gasten en klanten. Rijden op rekening met één overzichtelijke maandfactuur.</p>
+            <ul class="chips">
+              <li>Op rekening</li><li>Vaste ritten</li>
+            </ul>
+            <a href="#offerte" class="card__link js-pick" data-type="t-biz">Zakelijk aanvragen <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="card">
+            <span class="card__icon"><svg aria-hidden="true"><use href="#i-group"/></svg></span>
+            <h3>Groepsvervoer</h3>
+            <p>Sportteams, schoolreisjes en uitjes in een ruime personenbus met plek voor bagage.</p>
+            <ul class="chips">
+              <li>Tot 8 personen</li><li>Bagageruimte</li>
+            </ul>
+            <a href="#offerte" class="card__link js-pick" data-type="t-group">Groepsrit aanvragen <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WERKWIJZE ============ -->
+    <section id="werkwijze" class="section section--dark">
+      <div class="wrap">
+        <div class="head head--center">
+          <p class="eyebrow">Onze werkwijze</p>
+          <h2>Van aanvraag tot <span class="gold">aankomst</span></h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="steps__n">1</span>
+            <h3>Aanvraag</h3>
+            <p>Vul het formulier in of app ons uw adres, bestemming en tijd.</p>
+          </li>
+          <li>
+            <span class="steps__n">2</span>
+            <h3>Vaste prijs</h3>
+            <p>Binnen een uur krijgt u een prijs die niet meer verandert.</p>
+          </li>
+          <li>
+            <span class="steps__n">3</span>
+            <h3>Bevestiging</h3>
+            <p>De dag ervoor ontvangt u de naam van de chauffeur en het kenteken.</p>
+          </li>
+          <li>
+            <span class="steps__n">4</span>
+            <h3>Onderweg</h3>
+            <p>Wij staan op tijd klaar. U stapt in, wij doen de rest.</p>
+          </li>
+        </ol>
+        <div class="steps__cta">
+          <a href="#offerte" class="btn btn--gold">Start uw aanvraag</a>
+          <a href="#" class="btn btn--outline js-wa" data-msg="Hoi Taxi VI, ik wil graag een rit plannen.">
+            <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WAAROM + FAQ ============ -->
+    <section id="waarom" class="section">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Waarom Taxi VI</p>
+          <h2>Rust voor u, <span class="gold">zekerheid</span> voor wie u vervoert</h2>
+          <div class="usps">
+            <div class="usp">
+              <span class="usp__ico"><svg aria-hidden="true"><use href="#i-euro"/></svg></span>
+              <div><h3>Vaste prijs</h3><p>Afgesproken is afgesproken, ook bij file of omleiding.</p></div>
+            </div>
+            <div class="usp">
+              <span class="usp__ico"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
+              <div><h3>Gescreende chauffeurs</h3><p>Al onze chauffeurs hebben een VOG en ervaring met kinderen.</p></div>
+            </div>
+            <div class="usp">
+              <span class="usp__ico"><svg aria-hidden="true"><use href="#i-clock"/></svg></span>
+              <div><h3>Altijd op tijd</h3><p>Wij plannen ruim en houden verkeer en vluchten in de gaten.</p></div>
+            </div>
+            <div class="usp">
+              <span class="usp__ico"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+              <div><h3>Snel antwoord</h3><p>Vragen of wijzigingen regelt u gewoon via WhatsApp.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="vragen">
+          <p class="eyebrow">Veelgestelde vragen</p>
+          <div class="faq">
+            <details open>
+              <summary>Kan ik ook bellen?</summary>
+              <p>We rijden op afspraak en plannen elke rit vooraf. Daarom lopen aanvragen via het offerteformulier of WhatsApp. Zo staan tijden en adressen meteen zwart op wit.</p>
+            </details>
+            <details>
+              <summary>Hoe ver van tevoren moet ik boeken?</summary>
+              <p>Voor luchthaven- en evenementenritten het liefst 24 uur vooraf. Voor leerlingenvervoer plannen we graag een week vooruit, zodat we een vaste chauffeur kunnen inroosteren.</p>
+            </details>
+            <details>
+              <summary>Wat als mijn vlucht vertraagd is?</summary>
+              <p>Geef uw vluchtnummer door, dan volgen wij de landingstijd. De chauffeur past zich aan, zonder wachtkosten.</p>
+            </details>
+            <details>
+              <summary>Rijden jullie voor scholen en gemeenten?</summary>
+              <p>Ja. We rijden leerlingenvervoer in opdracht van ouders, scholen en gemeenten. Neem contact op voor een voorstel op maat.</p>
+            </details>
+            <details>
+              <summary>Hoe betaal ik?</summary>
+              <p>Particulieren betalen via een betaalverzoek of pin in de auto. Zakelijke klanten en scholen kunnen op rekening rijden.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta__box">
+          <div>
+            <h2>Rit plannen? Regel het in 2 minuten.</h2>
+            <p>Vraag een offerte aan of stuur ons direct een WhatsApp.</p>
+          </div>
+          <div class="cta__actions">
+            <a href="#offerte" class="btn btn--dark">Offerte aanvragen</a>
+            <a href="#" class="btn btn--wa js-wa" data-msg="Hoi Taxi VI, ik wil graag een rit plannen.">
+              <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contact">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <a href="#top" class="logo"><span class="logo__mark">VI</span><span class="logo__text">Taxi <b>VI</b></span></a>
+        <p>Leerlingenvervoer, luchthavenvervoer, evenementenvervoer en zakelijke ritten op afspraak.</p>
+      </div>
+      <div>
+        <p class="footer__h">Diensten</p>
+        <ul>
+          <li><a href="#diensten">Leerlingenvervoer</a></li>
+          <li><a href="#diensten">Luchthavenvervoer</a></li>
+          <li><a href="#diensten">Evenementenvervoer</a></li>
+          <li><a href="#diensten">Zakelijk vervoer</a></li>
+          <li><a href="#diensten">Groepsvervoer</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__h">Contact</p>
+        <ul>
+          <li><a href="#" class="js-wa js-wa-display" data-msg="Hoi Taxi VI, ik heb een vraag.">WhatsApp</a></li>
+          <li><a href="#offerte">Offerte aanvragen</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__h">Bedrijfsgegevens</p>
+        <ul class="footer__data">
+          <li>KvK: 75199068</li>
+          <li>BTW: NL002294421B32</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <p>© <span id="jaar">2026</span> Taxi VI. Alle rechten voorbehouden.</p>
+      <p class="footer__disclaimer">Door gebruik te maken van deze website stemt u in met deze disclaimer en gaat u ermee akkoord dat het gebruik van de informatie op deze website voor uw eigen risico is.</p>
+    </div>
+  </footer>
+
+  <!-- Zwevende WhatsApp-knop -->
+  <a href="#" class="fab js-wa" data-msg="Hoi Taxi VI, ik heb een vraag over vervoer." aria-label="Stuur ons een WhatsApp">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <!-- ============ ICONEN ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.93-4.66-4.11-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.89 1.04.93 1.92 1.22 2.19 1.35.27.14.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.58.75 1.85.88.27.14.45.2.52.32.07.11.07.66-.17 1.3Z"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5-9 5-9-5Z"/><path d="M7 11.2V16c0 1.2 2.2 3 5 3s5-1.8 5-3v-4.8"/><path d="M21 9v5"/></g></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M10.5 13.5 3 11l1.5-1.5 8 1L17 6c1-1 2.6-1.4 3.2-.8.6.6.2 2.2-.8 3.2l-4.5 4.5 1 8L14.4 22l-2.5-7.5-3.4 3.4.3 2.6-1.3 1.3-1.4-3.5-3.5-1.4 1.3-1.3 2.6.3 3.5-3.4Z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8L12 3Z"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></g></symbol>
+    <symbol id="i-group" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8s4.9 1.8 5.5 4.8M15 14.4c2.6-.4 4.8 1.2 5.5 4.1"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></g></symbol>
+    <symbol id="i-euro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.5 6.5A7 7 0 1 0 17.5 17.5"/><path d="M4 10.5h9M4 13.5h9"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>
